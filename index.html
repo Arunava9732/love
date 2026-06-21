@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="A bright, animated birthday website ready for GitHub Pages."
+    />
+    <title>Happy Birthday!</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="entrance.css" />
+    <link rel="stylesheet" href="popup.css" />
+
+
+  </head>
+  <body>
+    <div class="background-glow background-glow--one"></div>
+    <div class="background-glow background-glow--two"></div>
+    <div class="confetti-layer" id="confetti-layer" aria-hidden="true"></div>
+    <div class="heart-layer" id="heart-layer" aria-hidden="true"></div>
+    <div class="petal-layer" id="petal-layer" aria-hidden="true"></div>
+
+    <main class="page-shell">
+      <section class="hero card">
+        <div class="hero__badge">Birthday mode: ON</div>
+        <p class="hero__eyebrow">A little surprise, made with love</p>
+        <h1 class="hero__title">
+          Happy Birthday, <span id="celebrant-name">Sayanti Shaw</span>! 🎉
+        </h1>
+        <p class="hero__subtitle">
+          Today is all about cake, laughter, warm wishes, and the kind of love
+          that makes every little moment feel softer, brighter, and sweeter.
+        </p>
+
+        <div class="big-heart" aria-hidden="true">
+          <span class="big-heart__halo big-heart__halo--one">✦</span>
+          <span class="big-heart__halo big-heart__halo--two">✦</span>
+          <span class="big-heart__halo big-heart__halo--three">✦</span>
+          <span class="big-heart__halo big-heart__halo--four">✦</span>
+          <span class="big-heart__symbol">♥</span>
+        </div>
+
+        <div class="love-heart" aria-hidden="true">
+          <span class="love-heart__spark">♥</span>
+          <span class="love-heart__text">Love</span>
+          <span class="love-heart__spark">♥</span>
+        </div>
+
+        <div class="hero__stats">
+          <article class="stat-card">
+            <span class="stat-card__label">Birthday date</span>
+            <strong class="stat-card__value" id="birthday-date">21 Jun 2026</strong>
+          </article>
+          <article class="stat-card">
+            <span class="stat-card__label">Cake pieces</span>
+            <strong class="stat-card__value" id="cake-value">8</strong>
+          </article>
+          <article class="stat-card">
+            <span class="stat-card__label">Birthday energy</span>
+            <strong class="stat-card__value">100%</strong>
+          </article>
+        </div>
+
+        <div class="hero__actions">
+          <button class="button button--primary" id="celebrate-btn" type="button">
+            Celebrate!
+          </button>
+          <button class="button button--secondary" id="music-btn" type="button" aria-pressed="false">
+            Play music
+          </button>
+          <audio id="music-audio" preload="none" aria-hidden="true"></audio>
+
+          <button class="button button--secondary" id="letter-btn" type="button">
+            Open love letter
+          </button>
+          <a class="button button--secondary" href="#wishes" id="wishes-link">Read wishes</a>
+
+        </div>
+      </section>
+
+      <section class="grid-section">
+        <article class="card message-card">
+          <h2>Today’s message</h2>
+          <p>
+            May your year ahead be filled with gentle mornings, deep laughter,
+            quiet comfort, and all the beautiful reasons that make loving you so
+            easy.
+          </p>
+          <p class="message-card__highlight">
+            You deserve a day that feels like your favorite song, your safest
+            hug, and your happiest memory all at once.
+          </p>
+        </article>
+
+        <article class="card countdown-card">
+          <h2>Next big moment</h2>
+          <p class="countdown-card__label">Birthday countdown</p>
+          <div class="countdown" id="countdown" aria-live="polite">
+            <div><strong id="days">0</strong><span>days</span></div>
+            <div><strong id="hours">0</strong><span>hours</span></div>
+            <div><strong id="minutes">0</strong><span>minutes</span></div>
+            <div><strong id="seconds">0</strong><span>seconds</span></div>
+          </div>
+        </article>
+      </section>
+
+      <section class="card memories-card" id="wishes">
+        <div class="section-heading">
+          <p class="hero__eyebrow">Birthday wishes</p>
+          <h2>Reasons this day is special</h2>
+        </div>
+
+        <div class="wish-list">
+          <article class="wish">
+            <span class="wish__icon">✨</span>
+            <div>
+              <h3>Bright moments</h3>
+              <p>May every hour come with a reason to smile.</p>
+            </div>
+          </article>
+          <article class="wish">
+            <span class="wish__icon">🎂</span>
+            <div>
+              <h3>Sweet surprises</h3>
+              <p>From cake to kind words, let today be extra delicious.</p>
+            </div>
+          </article>
+          <article class="wish">
+            <span class="wish__icon">💛</span>
+            <div>
+              <h3>Warm memories</h3>
+              <p>May this year add a whole new chapter of happy stories.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="card partner-note" id="partner-note">
+        <div class="section-heading">
+          <p class="hero__eyebrow">From your partner</p>
+          <h2>A little note for Sayanti Shaw</h2>
+        </div>
+        <p class="partner-note__text">
+          My love, every day with you feels like a gift, but today I want to
+          celebrate you extra loudly. Your smile, your kindness, and the way you
+          make life feel warmer mean more than words can fully hold. I hope this
+          birthday wraps you in peace, joy, and all the love you give so freely.
+        </p>
+      </section>
+
+      <section class="card photo-wall" id="photos">
+        <div class="section-heading">
+          <p class="hero__eyebrow">Photo memories</p>
+          <h2>Favorite moments together</h2>
+        </div>
+        <div class="memory-gallery" id="memory-gallery" aria-label="Photo memories gallery"></div>
+      </section>
+
+      <section class="card love-letter" id="love-letter">
+        <div class="section-heading">
+          <p class="hero__eyebrow">Love letter</p>
+          <h2>To the most beautiful part of my world</h2>
+        </div>
+        <p class="love-letter__text">
+          Sayanti Shaw, loving you has been one of the sweetest parts of my life.
+          You turn ordinary days into memories I want to keep forever, and your
+          heart makes every place feel like home. On your birthday, I just want
+          you to feel adored, celebrated, and wrapped in the kind of happiness
+          you always give to others.
+        </p>
+      </section>
+    </main>
+
+    <div class="letter-modal" id="letter-modal" aria-hidden="true">
+      <div class="letter-modal__backdrop" id="letter-close"></div>
+      <section class="letter-modal__panel" role="dialog" aria-modal="true" aria-labelledby="letter-modal-title">
+        <button class="letter-modal__close" id="letter-close-btn" type="button" aria-label="Close love letter">×</button>
+        <p class="hero__eyebrow">Full-screen love letter</p>
+        <h2 id="letter-modal-title">For Sayanti Shaw, with all my heart</h2>
+        <p class="letter-modal__text">
+          Every day with you is a reminder that love can be calm, bright, and beautifully real.
+          You are my favorite person to celebrate, my favorite place to return to, and the
+          sweetest part of my every ordinary day. I hope this birthday surrounds you with
+          laughter, peace, and the kind of joy that stays long after the candles are gone.
+        </p>
+      </section>
+    </div>
+
+    <footer class="footer">
+      <p class="footer__closing">With all my love, always — your partner. ❤️</p>
+    </footer>
+
+    <div class="birth-popup" id="birth-popup" aria-hidden="true">
+      <div class="birth-popup__panel" role="dialog" aria-modal="true" aria-labelledby="birth-popup-title">
+        <div class="birth-popup__top">
+          <h2 class="birth-popup__title" id="birth-popup-title">Happy Birth Day! 🎂</h2>
+          <button class="birth-popup__close" id="birth-popup-close" type="button" aria-label="Close popup">×</button>
+        </div>
+        <p class="birth-popup__note" id="birth-popup-note">For my love — always. ❤️</p>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
+

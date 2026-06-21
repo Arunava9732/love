@@ -1,0 +1,41 @@
+/* Initial entrance animation for the main content */
+
+.page-entry {
+  animation: pageEntryLeftToRight 900ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+@keyframes pageEntryLeftToRight {
+  from {
+    opacity: 0;
+    transform: translateX(-22px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Then fade it out slightly towards the side (gentle, not disruptive) */
+.page-entry.page-entry--fade {
+  animation: pageEntryLeftToRight 900ms cubic-bezier(0.2, 0.8, 0.2, 1) both,
+    pageEntryFadeOutSide 900ms ease 500ms both;
+}
+
+@keyframes pageEntryFadeOutSide {
+  0% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-entry,
+  .page-entry.page-entry--fade {
+    animation: none !important;
+  }
+}
+

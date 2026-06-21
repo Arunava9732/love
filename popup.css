@@ -1,0 +1,76 @@
+/* Happy Birthday popup */
+
+.birth-popup {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  background: rgba(10, 7, 18, 0.55);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 220ms ease;
+  z-index: 100;
+}
+
+/* Safety: ensure when closed, overlay never blocks taps */
+.birth-popup:not(.is-open) {
+  pointer-events: none;
+}
+
+
+
+.birth-popup.is-open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.birth-popup__panel {
+  width: min(560px, 100%);
+  border-radius: 28px;
+  padding: 22px 22px 18px;
+  background: rgba(255, 255, 255, 0.16);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  box-shadow: 0 36px 120px rgba(0, 0, 0, 0.45);
+}
+
+.birth-popup__top {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.birth-popup__title {
+  margin: 0;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(2rem, 5vw, 2.6rem);
+  line-height: 1.05;
+}
+
+.birth-popup__close {
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.14);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  color: var(--text);
+  cursor: pointer;
+  font-size: 1.4rem;
+}
+
+.birth-popup__note {
+  margin: 12px 0 0;
+  color: var(--muted);
+  line-height: 1.8;
+  font-size: 1.02rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .birth-popup {
+    transition: none;
+  }
+}
+
