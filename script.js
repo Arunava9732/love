@@ -63,13 +63,6 @@ function maybeShowBirthPopup(diff, parts) {
   // Debug: Log when countdown is done
   console.log('Countdown finished, diff:', diff);
 
-  // Play the "MY LOVE birthday song" automatically when popup opens
-  // Only play once when popup first opens
-  if (birthPopup.dataset.opened !== "true") {
-    console.log('Playing love song for popup...');
-    playLoveSongForPopup();
-  }
-
   // Show for each time loading the website (no permanent once-per-user guard)
   // But we still prevent duplicate opens during the same reload.
   if (birthPopup.dataset.opened === "true") return;
@@ -78,7 +71,15 @@ function maybeShowBirthPopup(diff, parts) {
   birthPopup.classList.add("is-open");
   birthPopup.setAttribute("aria-hidden", "false");
 
+  // Play the "MY LOVE birthday song" only when the popup is actually opened.
+  console.log('Playing love song for popup...');
+  playLoveSongForPopup();
+
+
+
+
   console.log('Birth popup opened');
+
 
   const days = parts?.days ?? 0;
   if (days === 0 && parts?.hours === 0 && parts?.minutes === 0 && parts?.seconds === 0) {
@@ -364,10 +365,22 @@ function playLoveSongForPopup() {
 
 function pauseLoveSong() {
   if (loveSongAudio) {
+    // keep currentTime so if popup opens again we can start from beginning
+    // (playLoveSongForPopup resets to 0 anyway)
     loveSongAudio.pause();
     loveSongPlaying = false;
   }
 }
+
+function startLoveSongIfPopupIsOpen() {
+  if (!birthPopup) return;
+  if (!birthPopup.classList.contains("is-open")) return;
+  playLoveSongForPopup();
+}
+
+
+
+
 
 
 
